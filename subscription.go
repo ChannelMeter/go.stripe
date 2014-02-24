@@ -18,18 +18,18 @@ const (
 //
 // see https://stripe.com/docs/api#subscription_object
 type Subscription struct {
-	Customer           string `json:"customer"`
-	Status             string `json:"status"`
-	Plan               *Plan  `json:"plan"`
-	Start              int64  `json:"start"`
-	EndedAt            Int64  `json:"ended_at"`
-	CurrentPeriodStart Int64  `json:"current_period_start"`
-	CurrentPeriodEnd   Int64  `json:"current_period_end"`
-	TrialStart         Int64  `json:"trial_start"`
-	TrialEnd           Int64  `json:"trial_end"`
-	CanceledAt         Int64  `json:"canceled_at"`
-	CancelAtPeriodEnd  bool   `json:"cancel_at_period_end"`
-	Quantity           int64  `json"quantity"`
+	Customer           string `json:"customer" bson:"customer"`
+	Status             string `json:"status" bson:"status"`
+	Plan               *Plan  `json:"plan" bson:"plan"`
+	Start              int64  `json:"start" bson:"start"`
+	EndedAt            Int64  `json:"ended_at" bson:"ended_at"`
+	CurrentPeriodStart Int64  `json:"current_period_start" bson:"current_period_start"`
+	CurrentPeriodEnd   Int64  `json:"current_period_end" bson:"current_period_end"`
+	TrialStart         Int64  `json:"trial_start" bson:"trial_start"`
+	TrialEnd           Int64  `json:"trial_end" bson:"trial_end"`
+	CanceledAt         Int64  `json:"canceled_at" bson:"canceled_at"`
+	CancelAtPeriodEnd  bool   `json:"cancel_at_period_end" bson:"cancel_at_period_end"`
+	Quantity           int64  `json:"quantity" bson:"quantity"`
 }
 
 // SubscriptionClient encapsulates operations for updating and canceling

@@ -25,11 +25,11 @@ const (
 type Error struct {
 	Code   int
 	Detail struct {
-		Type    string `json:"type"`
-		Message string `json:"message"`
-		Code    string `json:"code,omitempty"`
-		Param   string `json:"param,omitempty"`
-	} `json:"error"`
+		Type    string `json:"type" bson:"type"`
+		Message string `json:"message" bson:"message"`
+		Code    string `json:"code,omitempty" bson:"code,omitempty"`
+		Param   string `json:"param,omitempty" bson:"param,omitempty"`
+	} `json:"error" bson:"error"`
 }
 
 func (e *Error) Error() string {

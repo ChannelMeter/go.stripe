@@ -19,23 +19,23 @@ const (
 
 // Card represents details about a Credit Card entered into Stripe.
 type Card struct {
-	Id                string `json:"id"`
-	Name              String `json:"name,omitempty"`
-	Type              string `json:"type"`
-	ExpMonth          int    `json:"exp_month"`
-	ExpYear           int    `json:"exp_year"`
-	Last4             string `json:"last4"`
-	Fingerprint       string `json:"fingerprint"`
-	Country           String `json:"country,omitempty"`
-	Address1          String `json:"address_line1,omitempty"`
-	Address2          String `json:"address_line2,omitempty"`
-	AddressCountry    String `json:"address_country,omitempty"`
-	AddressState      String `json:"address_state,omitempty"`
-	AddressZip        String `json:"address_zip,omitempty"`
-	AddressCity       String `json:"address_city"`
-	AddressLine1Check String `json:"address_line1_check,omitempty"`
-	AddressZipCheck   String `json:"address_zip_check,omitempty"`
-	CVCCheck          String `json:"cvc_check,omitempty"`
+	Id                string `json:"id" bson:"id"`
+	Name              String `json:"name,omitempty" bson:"name,omitempty"`
+	Type              string `json:"type" bson:"type"`
+	ExpMonth          int    `json:"exp_month" bson:"exp_month"`
+	ExpYear           int    `json:"exp_year" bson:"exp_year"`
+	Last4             string `json:"last4" bson:"last4"`
+	Fingerprint       string `json:"fingerprint" bson:"fingerprint"`
+	Country           String `json:"country,omitempty" bson:"country,omitempty"`
+	Address1          String `json:"address_line1,omitempty" bson:"address_line1,omitempty"`
+	Address2          String `json:"address_line2,omitempty" bson:"address_line2,omitempty"`
+	AddressCountry    String `json:"address_country,omitempty" bson:"address_country,omitempty"`
+	AddressState      String `json:"address_state,omitempty" bson:"address_state,omitempty"`
+	AddressZip        String `json:"address_zip,omitempty" bson:"address_zip,omitempty"`
+	AddressCity       String `json:"address_city" bson:"address_city"`
+	AddressLine1Check String `json:"address_line1_check,omitempty" bson:"address_line1_check,omitempty"`
+	AddressZipCheck   String `json:"address_zip_check,omitempty" bson:"address_zip_check,omitempty"`
+	CVCCheck          String `json:"cvc_check,omitempty" bson:"cvc_check,omitempty"`
 }
 
 // CardParams encapsulates options for Creating or Updating Credit Cards.

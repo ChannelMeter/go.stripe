@@ -9,24 +9,24 @@ import (
 //
 // see https://stripe.com/docs/api#customer_object
 type Customer struct {
-	Id           string        `json:"id"`
-	Desc         String        `json:"description,omitempty"`
-	Email        String        `json:"email,omitempty"`
-	Created      int64         `json:"created"`
-	Balance      int64         `json:"account_balance"`
-	Delinquent   bool          `json:"delinquent"`
-	Cards        CardData      `json:"cards,omitempty"`
-	Discount     *Discount     `json:"discount,omitempty"`
-	Subscription *Subscription `json:"subscription,omitempty"`
-	Livemode     bool          `json:"livemode"`
-	DefaultCard  String        `json:"default_card"`
+	Id           string        `json:"id" bson:"id"`
+	Desc         String        `json:"description,omitempty" bson:"description,omitempty"`
+	Email        String        `json:"email,omitempty" bson:"email,omitempty"`
+	Created      int64         `json:"created" bson:"created"`
+	Balance      int64         `json:"account_balance" bson:"account_balance"`
+	Delinquent   bool          `json:"delinquent" bson:"delinquent"`
+	Cards        CardData      `json:"cards,omitempty" bson:"cards,omitempty"`
+	Discount     *Discount     `json:"discount,omitempty" bson:"discount,omitempty"`
+	Subscription *Subscription `json:"subscription,omitempty" bson:"subscription,omitempty"`
+	Livemode     bool          `json:"livemode" bson:"livemode"`
+	DefaultCard  String        `json:"default_card" bson:"default_card"`
 }
 
 type CardData struct {
-	Object string  `json:"object"`
-	Count  int     `json:"count"`
-	Url    string  `json:"url"`
-	Data   []*Card `json:"data"`
+	Object string  `json:"object" bson:"object"`
+	Count  int     `json:"count" bson:"count"`
+	Url    string  `json:"url" bson:"url"`
+	Data   []*Card `json:"data" bson:"data"`
 }
 
 // Discount represents the actual application of a coupon to a particular
@@ -34,11 +34,11 @@ type CardData struct {
 //
 // see https://stripe.com/docs/api#discount_object
 type Discount struct {
-	Id       string  `json:"id"`
-	Customer string  `json:"customer"`
-	Start    Int64   `json:"start"`
-	End      Int64   `json:"end"`
-	Coupon   *Coupon `json:"coupon"`
+	Id       string  `json:"id" bson:"id"`
+	Customer string  `json:"customer" bson:"customer"`
+	Start    Int64   `json:"start" bson:"start"`
+	End      Int64   `json:"end" bson:"end"`
+	Coupon   *Coupon `json:"coupon" bson:"coupon"`
 }
 
 // CustomerParams encapsulates options for creating and updating Customers.

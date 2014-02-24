@@ -9,14 +9,14 @@ import (
 //
 // see https://stripe.com/docs/api#token_object
 type Token struct {
-	Id       string `json:"id"`
-	Amount   int64  `json:"amount"`
-	Currency string `json:"currency"`
-	Created  int64  `json:"created"`
-	Used     bool   `json:"used"`
-	Livemode bool   `json:"livemode"`
-	Type     string `json:"type"`
-	Card     *Card  `json:"card"`
+	Id       string `json:"id" bson:"id"`
+	Amount   int64  `json:"amount" bson:"amount"`
+	Currency string `json:"currency" bson:"currency"`
+	Created  int64  `json:"created" bson:"created"`
+	Used     bool   `json:"used" bson:"used"`
+	Livemode bool   `json:"livemode" bson:"livemode"`
+	Type     string `json:"type" bson:"type"`
+	Card     *Card  `json:"card" bson:"card"`
 }
 
 // TokenClient encapsulates operations for creating and querying tokens using

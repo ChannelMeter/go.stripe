@@ -21,30 +21,30 @@ const (
 //
 // see https://stripe.com/docs/api#charge_object
 type Charge struct {
-	Id             string        `json:"id"`
-	Desc           String        `json:"description"`
-	Amount         int64         `json:"amount"`
-	Card           *Card         `json:"card"`
-	Currency       string        `json:"currency"`
-	Created        int64         `json:"created"`
-	Customer       String        `json:"customer"`
-	Invoice        String        `json:"invoice"`
-	Fee            int64         `json:"fee"`
-	Paid           bool          `json:"paid"`
-	Details        []*FeeDetails `json:"fee_details"`
-	Refunded       bool          `json:"refunded"`
-	AmountRefunded Int64         `json:"amount_refunded"`
-	FailureMessage String        `json:"failure_message"`
-	Disputed       bool          `json:"disputed"`
-	Livemode       bool          `json:"livemode"`
+	Id             string        `json:"id" bson:"id"`
+	Desc           String        `json:"description" bson:"description"`
+	Amount         int64         `json:"amount" bson:"amount"`
+	Card           *Card         `json:"card" bson:"card"`
+	Currency       string        `json:"currency" bson:"currency"`
+	Created        int64         `json:"created" bson:"created"`
+	Customer       String        `json:"customer" bson:"customer"`
+	Invoice        String        `json:"invoice" bson:"invoice"`
+	Fee            int64         `json:"fee" bson:"fee"`
+	Paid           bool          `json:"paid" bson:"paid"`
+	Details        []*FeeDetails `json:"fee_details" bson:"fee_details"`
+	Refunded       bool          `json:"refunded" bson:"refunded"`
+	AmountRefunded Int64         `json:"amount_refunded" bson:"amount_refunded"`
+	FailureMessage String        `json:"failure_message" bson:"failure_message"`
+	Disputed       bool          `json:"disputed" bson:"disputed"`
+	Livemode       bool          `json:"livemode" bson:"livemode"`
 }
 
 // FeeDetails represents a single fee associated with a Charge.
 type FeeDetails struct {
-	Amount      int64  `json:"amount"`
-	Currency    string `json:"currency"`
-	Type        string `json:"type"`
-	Application String `json:"application"`
+	Amount      int64  `json:"amount" bson:"amount"`
+	Currency    string `json:"currency" bson:"currency"`
+	Type        string `json:"type" bson:"type"`
+	Application String `json:"application" bson:"application"`
 }
 
 // ChargeParams encapsulates options for creating a new Charge.

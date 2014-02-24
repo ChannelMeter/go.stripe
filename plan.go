@@ -17,14 +17,14 @@ const (
 //
 // see https://stripe.com/docs/api#plan_object
 type Plan struct {
-	Id              string `json:"id"`
-	Name            string `json:"name"`
-	Amount          int64  `json:"amount"`
-	Interval        string `json:"interval"`
-	IntervalCount   int    `json:"interval_count"`
-	Currency        string `json:"currency"`
-	TrialPeriodDays Int    `json:"trial_period_days"`
-	Livemode        bool   `json:"livemode"`
+	Id              string `json:"id" bson:"id"`
+	Name            string `json:"name" bson:"name"`
+	Amount          int64  `json:"amount" bson:"amount"`
+	Interval        string `json:"interval" bson:"interval"`
+	IntervalCount   int    `json:"interval_count" bson:"interval_count"`
+	Currency        string `json:"currency" bson:"currency"`
+	TrialPeriodDays Int    `json:"trial_period_days" bson:"trial_period_days"`
+	Livemode        bool   `json:"livemode" bson:"livemode"`
 }
 
 // PlanClient encapsulates operations for creating, updating, deleting and

@@ -16,14 +16,14 @@ const (
 //
 // see https://stripe.com/docs/api#coupon_object
 type Coupon struct {
-	Id               string `json:"id"`
-	Duration         string `json:"duration"`
-	PercentOff       int    `json:"percent_off"`
-	DurationInMonths Int    `json:"duration_in_months,omitempty"`
-	MaxRedemptions   Int    `json:"max_redemptions,omitempty"`
-	RedeemBy         Int64  `json:"redeem_by,omitempty"`
-	TimesRedeemed    int    `json:"times_redeemed,omitempty"`
-	Livemode         bool   `json:"livemode"`
+	Id               string `json:"id" bson:"id"`
+	Duration         string `json:"duration" bson:"duration"`
+	PercentOff       int    `json:"percent_off" bson:"percent_off"`
+	DurationInMonths Int    `json:"duration_in_months,omitempty" bson:"duration_in_months,omitempty"`
+	MaxRedemptions   Int    `json:"max_redemptions,omitempty" bson:"max_redemptions,omitempty"`
+	RedeemBy         Int64  `json:"redeem_by,omitempty" bson:"redeem_by,omitempty"`
+	TimesRedeemed    int    `json:"times_redeemed,omitempty" bson:"times_redeemed,omitempty"`
+	Livemode         bool   `json:"livemode" bson:"livemode"`
 }
 
 // CouponClient encapsulates operations for creating, updating, deleting and
